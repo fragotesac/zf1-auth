@@ -1,2 +1,5 @@
 parameters:
     ignoreErrors:
+        # These are used, just in an odd way (variable variable)
+        - '#Constructor of class Zend_Auth_Adapter_Digest has an unused parameter \$.+\.#'
+        - '#Casting to int something that.s already int\.#'
