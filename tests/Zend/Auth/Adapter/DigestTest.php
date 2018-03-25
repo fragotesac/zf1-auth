@@ -22,17 +22,6 @@
 
 
 /**
- * PHPUnit\Framework\TestCase
- */
-
-
-/**
- * Zend_Auth_Adapter_Digest
- */
-require_once 'Zend/Auth/Adapter/Digest.php';
-
-
-/**
  * @category   Zend
  * @package    Zend_Auth
  * @subpackage UnitTests
