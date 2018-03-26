@@ -36,5 +36,11 @@
         "test": "phpunit ./tests",
         "test-with-coverage": "phpunit --coverage-clover=clover.xml ./tests",
         "phpstan": "phpstan analyze -l5 -c phpstan.neon --no-progress ./src --ansi"
+    },
+    "suggest": {
+        "diablomedia/zendframework1-auth-adapter-dbtable": "DbTable based auth adapter",
+        "diablomedia/zendframework1-auth-adapter-openid": "OpenId based auth adapter",
+        "diablomedia/zendframework1-auth-adapter-ldap": "Ldap based auth adapter",
+        "diablomedia/zendframework1-auth-adapter-http": "Http based auth adapter"
     }
 }
