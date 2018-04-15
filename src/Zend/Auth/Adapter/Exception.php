@@ -29,4 +29,5 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Auth_Adapter_Exception extends Zend_Auth_Exception
-{}
+{
+}

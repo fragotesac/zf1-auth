@@ -1,4 +1,7 @@
 parameters:
+    excludes_analyse:
+        - %rootDir%/../../../tests/*
+        - %rootDir%/../../../vendor/*
     ignoreErrors:
         # These are used, just in an odd way (variable variable)
         - '#Constructor of class Zend_Auth_Adapter_Digest has an unused parameter \$.+\.#'
