@@ -102,7 +102,7 @@ class Zend_Auth_Adapter_DigestTest extends PHPUnit\Framework\TestCase
         $this->assertFalse($result->isValid());
 
         $messages = $result->getMessages();
-        $this->assertEquals(1, count($messages));
+        $this->assertCount(1, $messages);
         $this->assertEquals($result->getCode(), Zend_Auth_Result::FAILURE_IDENTITY_NOT_FOUND);
         $this->assertContains('combination not found', $messages[0]);
 
@@ -131,7 +131,7 @@ class Zend_Auth_Adapter_DigestTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($result->getCode(), Zend_Auth_Result::FAILURE_IDENTITY_NOT_FOUND);
 
         $messages = $result->getMessages();
-        $this->assertEquals(1, count($messages));
+        $this->assertCount(1, $messages);
         $this->assertContains('combination not found', $messages[0]);
 
         $identity = $result->getIdentity();
@@ -159,7 +159,7 @@ class Zend_Auth_Adapter_DigestTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($result->getCode(), Zend_Auth_Result::FAILURE_CREDENTIAL_INVALID);
 
         $messages = $result->getMessages();
-        $this->assertEquals(1, count($messages));
+        $this->assertCount(1, $messages);
         $this->assertContains('Password incorrect', $messages[0]);
 
         $identity = $result->getIdentity();
