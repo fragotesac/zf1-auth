@@ -68,7 +68,7 @@ jobs:
         - composer phpstan
 
     - stage: test with coverage
-      php: 7.1
+      php: 7.2
       env: TMPDIR=/tmp USE_XDEBUG=true CC_TEST_REPORTER_ID=cd0a239ff043b7e0481bb12b61bf159d2a49da3df5171f3562605bd720d6bd7b
       before_script:
         - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
