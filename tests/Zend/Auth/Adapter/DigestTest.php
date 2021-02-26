@@ -29,7 +29,7 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Auth
  */
-class Zend_Auth_Adapter_DigestTest extends PHPUnit\Framework\TestCase
+class DigestTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Path to test files
@@ -43,7 +43,7 @@ class Zend_Auth_Adapter_DigestTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->_filesPath = dirname(__FILE__) . '/Digest/_files';
     }
@@ -62,7 +62,7 @@ class Zend_Auth_Adapter_DigestTest extends PHPUnit\Framework\TestCase
             $this->fail('Expected Zend_Auth_Adapter_Exception not thrown upon authentication attempt before setting '
                       . 'a required option');
         } catch (Zend_Auth_Adapter_Exception $e) {
-            $this->assertContains('must be set before authentication', $e->getMessage());
+            $this->assertStringContainsString('must be set before authentication', $e->getMessage());
         }
     }
 
@@ -79,7 +79,7 @@ class Zend_Auth_Adapter_DigestTest extends PHPUnit\Framework\TestCase
             $this->fail('Expected Zend_Auth_Adapter_Exception not thrown upon authenticating against nonexistent '
                       . 'file');
         } catch (Zend_Auth_Adapter_Exception $e) {
-            $this->assertContains('Cannot open', $e->getMessage());
+            $this->assertStringContainsString('Cannot open', $e->getMessage());
         }
     }
 
@@ -104,7 +104,7 @@ class Zend_Auth_Adapter_DigestTest extends PHPUnit\Framework\TestCase
         $messages = $result->getMessages();
         $this->assertCount(1, $messages);
         $this->assertEquals($result->getCode(), Zend_Auth_Result::FAILURE_IDENTITY_NOT_FOUND);
-        $this->assertContains('combination not found', $messages[0]);
+        $this->assertStringContainsString('combination not found', $messages[0]);
 
         $identity = $result->getIdentity();
         $this->assertEquals($identity['realm'], $realm);
@@ -132,7 +132,7 @@ class Zend_Auth_Adapter_DigestTest extends PHPUnit\Framework\TestCase
 
         $messages = $result->getMessages();
         $this->assertCount(1, $messages);
-        $this->assertContains('combination not found', $messages[0]);
+        $this->assertStringContainsString('combination not found', $messages[0]);
 
         $identity = $result->getIdentity();
         $this->assertEquals($identity['realm'], $realm);
@@ -160,7 +160,7 @@ class Zend_Auth_Adapter_DigestTest extends PHPUnit\Framework\TestCase
 
         $messages = $result->getMessages();
         $this->assertCount(1, $messages);
-        $this->assertContains('Password incorrect', $messages[0]);
+        $this->assertStringContainsString('Password incorrect', $messages[0]);
 
         $identity = $result->getIdentity();
         $this->assertEquals($identity['realm'], $realm);
