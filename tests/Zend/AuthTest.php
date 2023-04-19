@@ -65,7 +65,7 @@ class Zend_AuthTest extends PHPUnit\Framework\TestCase
     {
         $auth   = Zend_Auth::getInstance();
         $result = $auth->authenticate(new Zend_AuthTest_Success_Adapter());
-        $this->assertTrue($result instanceof Zend_Auth_Result);
+        $this->assertInstanceOf(Zend_Auth_Result::class, $result);
         $this->assertTrue($auth->hasIdentity());
         $this->assertEquals('someIdentity', $auth->getIdentity());
     }
